@@ -1,4 +1,3 @@
-FROM jenkins/jenkins:lts
-ENV JAVA_OPTS -Xms256m -Xmx512m
-ENTRYPOINT []
-CMD /sbin/tini -s -- /usr/local/bin/jenkins.sh --httpPort=$PORT
+FROM openjdk:latest
+ADD niasp-0.0.1.jar /
+CMD java -jar niasp-0.0.1.jar
